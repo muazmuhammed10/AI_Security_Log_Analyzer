@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AI Security Log Analyzer</title>
+
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <header>
+        <h1>🛡️ AI Security Log Analyzer</h1>
+        <p>Detect threats, extract IOCs, and generate AI-powered security analysis.</p>
+    </header>
+
+    <section class="upload-section">
+
+        <h2>Analyze Security Log</h2>
+
+        <input
+            type="file"
+            id="logFile"
+            accept=".log,.txt"
+        >
+
+        <button id="analyzeBtn">
+            Analyze Log
+        </button>
+
+        <p id="status"></p>
+
+    </section>
+
+    <section id="results" class="hidden">
+
+        <div class="info-grid">
+
+            <div class="info-card">
+                <span>File</span>
+                <strong id="filename">-</strong>
+            </div>
+
+            <div class="info-card">
+                <span>Total Events</span>
+                <strong id="totalEvents">0</strong>
+            </div>
+
+            <div class="info-card">
+                <span>Threats</span>
+                <strong id="totalThreats">0</strong>
+            </div>
+
+            <div class="info-card">
+                <span>Severity</span>
+                <strong id="overallSeverity">LOW</strong>
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>Threat Overview</h2>
+
+            <div class="severity-grid">
+
+                <div class="severity-card high">
+                    <span>HIGH</span>
+                    <strong id="highCount">0</strong>
+                </div>
+
+                <div class="severity-card medium">
+                    <span>MEDIUM</span>
+                    <strong id="mediumCount">0</strong>
+                </div>
+
+                <div class="severity-card low">
+                    <span>LOW</span>
+                    <strong id="lowCount">0</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>Detected Threats</h2>
+
+            <div id="threatsContainer">
+                <p>No threats detected.</p>
+            </div>
+
+        </div>
+
+
+        <div class="section">
+
+            <h2>Indicators of Compromise</h2>
+
+            <div id="iocContainer"></div>
+
+        </div>
+
+
+        <div class="section ai-section">
+
+            <h2>🤖 AI Security Analysis</h2>
+
+            <div id="aiSummary"></div>
+
+            <div class="recommendation">
+                <h3>Recommended Action</h3>
+                <p id="recommendation"></p>
+            </div>
+
+        </div>
+
+    </section>
+
+</div>
+
+<script src="/static/script.js"></script>
+
+</body>
+</html>
